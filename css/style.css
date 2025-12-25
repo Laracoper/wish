@@ -1,0 +1,100 @@
+body {
+    background: url('../img/fon2.jpg');
+    background-blend-mode: rgba(0, 0, 0, 0.608);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    min-height: 100vh;
+    /* line-height: 1.8; */
+    color: rgb(234, 234, 234);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.img-box {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    /* height: 300px; */
+}
+
+.img-box::after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.437);
+    z-index: 3;
+    position: absolute;
+    user-select: none;
+}
+
+.img-text {
+    position: relative;
+    z-index: 4;
+    color: rgb(231, 227, 14);
+    top: 50%;
+    left: 0%;
+    /* transform: translateX(-50%); */
+    transform: translateY(-50%);
+    /* font-weight: 600; */
+    text-transform: uppercase;
+    line-height: 2rem;
+    padding: 15px;
+}
+
+.img-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#myForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input,
+textarea {
+    background: rgba(158, 158, 98, 0.192);
+    border: none;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 14px;
+    border-radius: 7px;
+    transition: all 0.3s linear;
+    outline: none;
+    color: aliceblue;
+}
+
+input:focus {}
+
+input:focus,
+textarea:focus {
+    transform: scale(1.02);
+    background: rgba(158, 158, 98, 0.082);
+}
+
+@media (min-width:992px) {
+    .img-box {
+
+        height: 600px;
+    }
+}
+
+@media (max-width:992px) {
+    .img-box {
+
+        height: 300px;
+    }
+}
