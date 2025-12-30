@@ -13,7 +13,8 @@
 <body>
     <div class="container py-5">
         <h1 class="mb-5 fs-2">Твои самые заветные мечты станут явью! 🌟</h1>
-        <h3 class="mb-4 fs-2">Отправь письмо Деду Морозу и получи персональное волшебное послание прямо к Новому году!</h3>
+        <h3 class="mb-4 fs-2">Отправь письмо Деду Морозу и получи персональное волшебное послание прямо к Новому году!
+        </h3>
 
         <div class="img-box mb-5">
             <div class="img-text">
@@ -30,7 +31,12 @@
 
             <textarea name="text" class="w-100" rows="4" placeholder="Чего бы вы пожелали?"></textarea>
             <div class="col-12 col-lg-3">
-                <button class="btn btn-warning w-100" type="submit">Создать волшебство</button>
+                <button id="btn" class="btn btn-warning w-100  justify-content-between" type="submit">Создать волшебство
+                    <div id="spiner" class="spinner-border hide" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </button>
+
             </div>
         </form>
 

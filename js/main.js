@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validateForm(event) {
         event.preventDefault(); // Предотвращаем стандартную отправку формы
-
+        let btn = document.querySelector('#btn') //получил кнопку из формы по айди для дизабле
+        let spiner = document.querySelector('#spiner') //получил spiner
         const form = event.target;
         const formData = new FormData(form);
         let isEmpty = false;
@@ -63,6 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Форма валидна. Отправляем данные...');
             // Здесь можно отправить данные, например, с помощью fetch
             // fetch('/submit-form', { method: 'POST', body: formData });
+            btn.disabled = true
+            btn.classList.add('d-flex')
+            spiner.classList.remove('hide')
+            
             fetch('https://script.google.com/macros/s/AKfycbxIKq5KJdoka6vliAmXygyJCByaGAmxyPGqQnn7u9A5DB0joY4lYPJEFMbbqv5Wr_fQvg/exec', {
                 method: 'POST',
                 body: formData,
@@ -72,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // mode: "no-cors"
             })
                 .then(response => {
+
+
                     if (response.ok) {
                         // alert('Данные отправлены!');
                         Swal.fire({
@@ -79,6 +86,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             title: "Запрос на волшебство добавлен !",
                         });
                         this.reset(); // Сбрасываем форму
+                        btn.disabled = false
+                        btn.classList.remove('d-flex')
+                        spiner.classList.add('hide')
                     } else {
                         alert('Ошибка отправки!');
                     }
